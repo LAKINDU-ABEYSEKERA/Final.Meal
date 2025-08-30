@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheMealDB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="alertContainer" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1050;"></div>
+    <div class="overlay"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo" href="#hero">TheMealDB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mealResults">Meals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mealDetails">Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="hero" class="title">
+        <video autoplay muted loop src="assets/video/mealDb bg.mp4" class="background"></video>
+        <h1>Welcome to TheMealDB</h1>
+        <p>Discover hand-picked recipes from around the world, made simple for you.</p>
+    </div>
+
+    <div class="section" id="features">
+        <img src="assets\image\mealDb bg 3.jpg" class="background">
+        <div class="container-sm mt-4">
+            <div class="row mb-2">
+                <div class="col-12 col-md-8 mb-2">
+                    <input type="text" class="txtInput" placeholder="Enter Meal Name" id="txtSearchInput">
+                </div>
+                <div class="col-12 col-md-4">
+                    <button onclick="searchMeal()" class="btnSearchMeal">Search</button>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-12 col-md-4 mb-2">
+                    <label for="categorySelect" class="label">Category :</label>
+                    <select id="categorySelect" class="select" onchange="filterByCategory()"></select>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label for="areaSelect" class="label">Area :</label>
+                    <select id="areaSelect" class="select" onchange="filterByArea()"></select>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <label for="ingredientSelect" class="label">Ingredient :</label>
+                    <select id="ingredientSelect" class="select" onchange="filterByIngredient()"></select>
+                </div>
+
+            </div>
+
+            <div class="row mb-2 text-center">
+                <div class="col">
+                    <button class="btnGetRandomMeal" onclick="getRandomMeal()">Surprise Me!</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="section" id="mealResults">
+        <div id="loadingSpinner" class="d-none text-center my-3">
+            <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="mealDetails">
+        <img src="assets\image\mealDB bg 4.jpg" class="background" alt="">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
